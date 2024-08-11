@@ -1,7 +1,7 @@
-const mongoose = require('mongoose')
-const User = mongoose.Schema
+import mongoose, { Schema, Model } from 'mongoose';
+import { User } from '../interfaces/interface';
 
-userSchema = new User({
+const userSchema: Schema<User> = new Schema({
     userName:{
         type: String,
         required: true,
@@ -16,13 +16,9 @@ userSchema = new User({
     password:{
         type: String,
         required: true
-    },
-    stripeCustomerId:{
-        type: String
-    },
-    subscriptions : [],
+    }
 })
 
-const Users = mongoose.model('User', userSchema);
+const Users: Model<User> = mongoose.model<User>('User', userSchema);
 
 module.exports = Users

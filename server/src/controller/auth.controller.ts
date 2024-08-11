@@ -1,7 +1,7 @@
-require('dotenv').config()
-const authService =require('../service/auth.service')
-const constants = require('../utils/constants')
-const bcrypt = require('bcrypt')
+require('dotenv').config();
+import authService from '../service/auth.service';
+import constants from '../utils/constants';
+import bcrypt from 'bcrypt';
 
 const register =async (req,res) =>{
  try {
